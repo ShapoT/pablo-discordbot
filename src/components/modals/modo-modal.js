@@ -37,8 +37,9 @@ module.exports = {
       .setFooter({ text: "Log system of PabloCoding" });
     client.channels.cache
       .get("1010633613047500960")
-      .send({ embeds: [modoEmbed] })
-      .react("✅")
+      .send({ embeds: [modoEmbed] });
+    
+    modoEmbed.react("✅")
       .react("❌");
   },
 };
