@@ -38,8 +38,9 @@ module.exports = {
     client.channels.cache
       .get("1010633613047500960")
       .send({ embeds: [modoEmbed] });
-    
-    modoEmbed.react("✅")
-      .react("❌");
+
+    const modoMessage = await interaction.fetcReply();
+    await modoMessage.react("✅");
+    await modoMessage.react("❌");
   },
 };
