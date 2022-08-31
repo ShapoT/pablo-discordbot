@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "@discordjs/rest": "^1.0.1",
+    "chalk": "^4.1.2",
+    "discord-api-types": "^0.37.1",
+    "discord-buttons": "^4.0.0-deprecated",
+    "discord.js": "^14.1.2",
+    "dotenv": "^16.0.1"
+  },
+  "name": "epsi-bot",
+  "version": "1.0.0",
+  "main": "src/bot.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShapoT/epsi-discordbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShapoT/epsi-discordbot/issues"
+  },
+  "homepage": "https://github.com/ShapoT/epsi-discordbot#readme",
+  "description": ""
+}
