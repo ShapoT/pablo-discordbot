@@ -38,9 +38,5 @@ module.exports = {
     client.channels.cache
       .get("1010633613047500960")
       .send({ embeds: [modoEmbed] });
-
-    const modoMessage = await message.reply({ embeds: [modoEmbed] });
-    modoMessage.react("✅");
-    modoMessage.react("❌");
   },
 };
