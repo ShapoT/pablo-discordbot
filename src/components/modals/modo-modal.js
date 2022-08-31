@@ -39,7 +39,7 @@ module.exports = {
       .get("1010633613047500960")
       .send({ embeds: [modoEmbed] });
 
-    const modoMessage = await interaction.reply({ embeds: [modoEmbed] });
+    const modoMessage = await message.reply({ embeds: [modoEmbed] });
     modoMessage.react("✅");
     modoMessage.react("❌");
   },
