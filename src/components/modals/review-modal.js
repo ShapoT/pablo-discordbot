@@ -22,7 +22,6 @@ module.exports = {
         value: interaction.fields.getTextInputValue("linkInput"),
       })
       .setTimestamp()
-      .setFooter({ text: "Log system of PabloCoding" });
     client.channels.cache
       .get("970113913481986158")
       .send({ embeds: [reviewEmbed] });
