@@ -15,7 +15,7 @@ module.exports = {
       .setColor(0x2ecc71)
       .addFields({
         name: "Code review",
-        value: "**" + "<@"+interaction.user.id +">"+ "** souhaiterais un avis sur son projet !",
+        value: "**" + "<@"+interaction.user.id +">"+ "** souhaiterait un avis sur son projet !",
       })
       .addFields({
         name: "Lien du repository",
