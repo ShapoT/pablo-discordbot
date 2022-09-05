@@ -18,7 +18,7 @@ const {
   
       const linkInput = new TextInputBuilder()
         .setCustomId("linkInput")
-        .setLabel("Entrez le lien du repository GitHub de votre projet")
+        .setLabel("Repository GitHub de votre projet")
         .setPlaceholder("https://github.com/Johndoe/MyProject")
         .setStyle(TextInputStyle.Paragraph);
     
