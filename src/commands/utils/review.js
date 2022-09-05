@@ -20,7 +20,7 @@ const {
         .setCustomId("linkInput")
         .setLabel("Entrez le lien du repository GitHub de votre projet")
         .setPlaceholder("https://github.com/Johndoe/MyProject")
-        .setStyle(TextInputStyle.Short);
+        .setStyle(TextInputStyle.Paragraph);
     
       const firstActionRowBuilder = new ActionRowBuilder().addComponents(
         linkInput
