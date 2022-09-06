@@ -1,4 +1,4 @@
-const { EmbedBuilder, messageLink } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
   data: {
@@ -35,8 +35,10 @@ module.exports = {
       })
       .setTimestamp()
       .setFooter({ text: "Log system of PabloCoding" });
-    client.channels.cache
-      .get("1010633613047500960")
-      .send({ embeds: [modoEmbed] });
+    const channel = client.channels.cache.get("1010633613047500960");
+    await channel.send({ embeds: [modoEmbed] }).then((msg) => {
+      msg.react("✅")
+      msg.react("❌")
+    });
   },
 };
