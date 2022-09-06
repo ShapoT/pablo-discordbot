@@ -39,6 +39,10 @@ module.exports = {
       msg.react("✅")
       msg.react("❌")
     });
+    const thread = await channel.threads.create({
+        name: "Suggestion de " + interaction.user.username,
+        autoArchiveDuration: 60,
+    });
 
   },
 };
