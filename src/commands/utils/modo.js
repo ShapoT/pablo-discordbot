@@ -6,6 +6,35 @@ const {
   ActionRowBuilder,
 } = require("discord.js");
 
+const dataModals = [
+  {
+    id: "nameInput",
+    label: "Entrez votre prénom",
+    placeHolder: "Prénom",
+    style: TextInputStyle.Short,
+  },
+  {
+    id: "prezInput",
+    label: "Présentez vous",
+    placeHolder:
+      "Âge, passions, pourquoi vous voulez devenir modérateur, etc...",
+    style: TextInputStyle.Paragraph,
+  },
+  {
+    id: "motivInput",
+    label: "Montrez-nous votre motivation",
+    placeHolder:
+      "Pourquoi voulez-vous devenir modérateur ? Qu'allez-vous apporter à la communauté ?",
+    style: TextInputStyle.Paragraph,
+  },
+  {
+    id: "dayInput",
+    label: "Vos disponibilités",
+    placeHolder: "Précisez vos disponibilités (jours et heures)",
+    style: TextInputStyle.Short,
+  },
+];
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("modo")
@@ -16,53 +45,16 @@ module.exports = {
       .setCustomId("modo-modal")
       .setTitle("Candidature modérateur");
 
-    const nameInput = new TextInputBuilder()
-      .setCustomId("nameInput")
-      .setLabel("Entrez votre prénom")
-      .setPlaceholder("Prénom")
-      .setStyle(TextInputStyle.Short);
+    for (let i = 0; i < dataModals.length; i++) {
+      const inputType = new TextInputBuilder()
+        .setCustomId(dataModals[i].id)
+        .setLabel(dataModals[i].label)
+        .setPlaceholder(dataModals[i].placeHolder)
+        .setStyle(dataModals[i].style);
 
-    const prezInput = new TextInputBuilder()
-      .setCustomId("prezInput")
-      .setLabel("Présentez vous")
-      .setPlaceholder(
-        "Âge, passions, pourquoi vous voulez devenir modérateur, etc...")
-      .setStyle(TextInputStyle.Paragraph);
-
-    const motivInput = new TextInputBuilder()
-      .setCustomId("motivInput")
-      .setLabel("Montrez-nous votre motivation")
-      .setPlaceholder(
-        "Pourquoi voulez-vous devenir modérateur ? Qu'allez-vous apporter à la communauté ?")
-      .setStyle(TextInputStyle.Paragraph);
-
-    const dayInput = new TextInputBuilder()
-      .setCustomId("dayInput")
-      .setLabel("Vos disponibilités")
-      .setPlaceholder(
-        "Précisez vos disponibilités (jours et heures)")
-      .setStyle(TextInputStyle.Short);
-
-    const firstActionRowBuilder = new ActionRowBuilder().addComponents(
-      nameInput
-    );
-    const secondActionRowBuilder = new ActionRowBuilder().addComponents(
-      prezInput
-    );
-    const thirdActionRowBuilder = new ActionRowBuilder().addComponents(
-      motivInput
-    );
-    const fourthActionRowBuilder = new ActionRowBuilder().addComponents(
-      dayInput
-    );
-
-    modal.addComponents(
-      firstActionRowBuilder,
-      secondActionRowBuilder,
-      thirdActionRowBuilder,
-      fourthActionRowBuilder
-    );
-
+      const actionRowBuilder = new ActionRowBuilder().addComponents(inputType);
+      modal.addComponents(actionRowBuilder);
+    }
     await interaction.showModal(modal);
   },
 };
