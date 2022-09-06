@@ -38,10 +38,10 @@ module.exports = {
     await channel.send({ embeds: [suggestionEmbed] }).then((msg) => {
       msg.react("✅")
       msg.react("❌")
-      suggestionEmbed.reply(channel.threads.create({name: "Suggestion de " + interaction.user.username, autoArchiveDuration: 60,}))
     });
-    
-
-
+    const thread = await channel.threads.create({
+        name: "Suggestion de " + interaction.user.username,
+        autoArchiveDuration: 60,
+    });
   },
 };
