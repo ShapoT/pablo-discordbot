@@ -26,7 +26,7 @@ module.exports = {
       .setColor(0x2ecc71)
       .addFields({
         name: "Suggestion",
-        value: "**" + "<@"+interaction.user.id +">"+ "** a émis une suggestion :",
+        value: "**" + "<@"+interaction.user.id +">"+ "** a émis une suggestion",
       })
       .addFields({
         name: "Suggestion",
