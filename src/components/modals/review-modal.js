@@ -23,7 +23,7 @@ module.exports = {
       })
       .setTimestamp()
     client.channels.cache
-      .get("970113913481986158")
+      .get("1016820892556337253")
       .send({ embeds: [reviewEmbed] });
   },
 };
