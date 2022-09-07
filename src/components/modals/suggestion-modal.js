@@ -35,13 +35,15 @@ module.exports = {
       .setTimestamp()
       .setFooter({ text: "Log system of PabloCoding" });
     const channel = client.channels.cache.get("1015331859183444119");
-    await channel.send({ embeds: [suggestionEmbed] }).then((msg) => {
+     await channel.send({ embeds: [suggestionEmbed] }).then((msg) => {
       msg.react("✅")
       msg.react("❌")
-    });
-    const thread = await channel.threads.create({
-        name: "Suggestion de " + interaction.user.username,
+      msg.startThread({
+        name: `Suggestion de ${interaction.user.username}`,
         autoArchiveDuration: 60,
+        reason: interaction.fields.getTextInputValue("ideaInput"),
+        type: 'GUILD_PUBLIC_THREAD'
+      });
     });
   },
 };
